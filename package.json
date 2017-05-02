@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --fix",
     "dev": "webpack-dev-server --progress --colors",
-    "build": "webpack --progress --colors"
+    "build": "ENV=prod webpack --progress --colors -p",
+    "build:dev": "ENV=dev webpack --progress --colors"
   },
   "author": "Ignacio Anaya",
   "license": "MIT",
