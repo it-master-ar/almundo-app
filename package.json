@@ -1,0 +1,25 @@
+{
+  "name": "almundo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --fix",
+    "build": "babel js --out-dir lib --watch"
+  },
+  "author": "Ignacio Anaya",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "http-server": "^0.9.0"
+  }
+}
