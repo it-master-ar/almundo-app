@@ -10,4 +10,8 @@ booksApi.get = function () {
   return api.get('/book')
 }
 
+booksApi.post = function (book) {
+  return api.post('/book', book)
+}
+
 export default booksApi

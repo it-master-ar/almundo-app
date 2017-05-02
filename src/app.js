@@ -1,15 +1,15 @@
+import booksApi from './api'
 import Book from './book'
-
-const book1 = new Book('YDKJS', 'Kyle Simpson')
-const book2 = new Book('JS The Good Parts', 'Douglas Crockford')
-const books = [book1, book2]
 
 const booksList = document.getElementById('booksList')
 const bookForm = document.getElementById('bookForm')
 
-books.forEach((b) => {
-  booksList.innerHTML += '<li>' + b.title + '</li>'
-})
+booksApi.get()
+  .then(res => {
+    res.data.forEach((b) => {
+      booksList.innerHTML += '<li>' + b.title + '</li>'
+    })
+  })
 
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -17,9 +17,11 @@ bookForm.addEventListener('submit', (e) => {
   const title = bookForm.title.value
   const author = bookForm.author.value
 
-  books.push(new Book(title, author))
-  booksList.innerHTML += '<li>' + title + '</li>'
+  booksApi.post(new Book(title, author))
+    .then(() => {
+      booksList.innerHTML += '<li>' + title + ' - ' + author + '</li>'
 
-  bookForm.title.value = ''
-  bookForm.author.value = ''
+      bookForm.title.value = ''
+      bookForm.author.value = ''
+    })
 })
