@@ -7,7 +7,8 @@
     "start": "http-server",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --fix",
-    "build": "babel js --out-dir lib --watch"
+    "dev": "babel js --out-dir lib --watch",
+    "build": "webpack --progress --colors"
   },
   "author": "Ignacio Anaya",
   "license": "MIT",
@@ -20,6 +21,10 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.1"
   }
 }

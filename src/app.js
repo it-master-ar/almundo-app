@@ -1,9 +1,4 @@
-class Book {
-  constructor (title, author) {
-    this.title = title
-    this.author = author
-  }
-}
+import Book from './book'
 
 const book1 = new Book('YDKJS', 'Kyle Simpson')
 const book2 = new Book('JS The Good Parts', 'Douglas Crockford')
